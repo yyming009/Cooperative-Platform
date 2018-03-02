@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { DataService } from "./services/data.service";
 import { AuthService } from "./services/auth.service";
+import { AuthGuardService } from "./services/auth-guard.service";
 
 import { routing } from "./app.routes";
 
@@ -29,13 +30,20 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpModule,
     routing
   ],
-  providers: [{
+  providers: [
+  {
     provide: "data",
     useClass: DataService
-  }, {
+  },
+  {
     provide: "auth",
     useClass: AuthService
-  }],
+  },
+  {
+    provide: "authGuard",
+    useClass: AuthGuardService
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

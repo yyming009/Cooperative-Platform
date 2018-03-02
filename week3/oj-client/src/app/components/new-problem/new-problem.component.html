@@ -1,4 +1,4 @@
-<div>
+<div *ngif="authGuard.isAdmin()">
   <form #formRef="ngForm">
     <div class="form-group">
       <label for="problemName">Problem Name</label>
@@ -19,7 +19,7 @@
         <option value="" disabled selected>
           select difficulty
         </option>
-        
+
         <option *ngFor="let difficulty of difficulties" [value]="difficulty">
           {{difficulty}}
         </option>
