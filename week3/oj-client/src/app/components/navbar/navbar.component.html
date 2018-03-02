@@ -16,8 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
 
         <li class="nav-item">
-          <button type="button" class="btn btn-primary" *ngIf="!auth.authenticated()"
-        (click)="login()">Sign in</button>
+          <button type="button" class="btn btn-primary">Sign in</button>
         </li>
 
         <li class="nav-item dropdown">
@@ -25,12 +24,11 @@
             {{username}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/profile">My Profile</a>
+            <a class="dropdown-item" href="#">My Profile</a>
             <a class="dropdown-item" href="#">My Favorites</a>
             <a class="dropdown-item" href="#">My Submission</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" *ngIf="auth.authenticated()"
-        (click)="logout()">Log out</a>
+            <a class="dropdown-item" href="#">Log out</a>
           </div>
         </li>
 

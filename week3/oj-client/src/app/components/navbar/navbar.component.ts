@@ -1,5 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,23 +9,11 @@ export class NavbarComponent implements OnInit {
 
   title = "Collabrative Coding Editor";
 
-  username = "";
+  username = "Joe";
 
-  constructor(@Inject('auth') private auth) { }
+  constructor() { }
 
   ngOnInit() {
-    if (this.auth.authenticated()) {
-      this.username = this.auth.getProfile().nickname;
-    }
-  }
-
-  login(): void {
-    this.auth.login()
-            .then(profile => this.username = profile.nickname);
-  }
-
-  logout(): void {
-    this.auth.logout();
   }
 
 }

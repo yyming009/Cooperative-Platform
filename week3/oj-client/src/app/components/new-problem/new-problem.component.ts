@@ -5,7 +5,7 @@ const DEFAULT_PROBLEM: Problem = Object.freeze({
   id: 0,
   name: "",
   desc: "",
-  difficulty: ""
+  difficulty: "Easy"
 });
 
 @Component({
@@ -19,8 +19,7 @@ export class NewProblemComponent implements OnInit {
 
   newProblem: Problem  = Object.assign({}, DEFAULT_PROBLEM);
 
-  constructor(@Inject("data") private data,
-              @Inject("authGuard") private authGuard) { }
+  constructor(@Inject("data") private data) { }
 
   ngOnInit() {
   }
