@@ -45,7 +45,7 @@ var getProblem = function (id) {
     problemModel.findOne({ id: id }, function (err, problem) {
       if (err) {
         reject(err);
-      } esle {
+      } else {
         resolve(problem);
       }
     });
